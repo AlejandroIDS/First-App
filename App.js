@@ -26,7 +26,7 @@ export default function App() {
       <TextInput style={styles.textInput} onChangeText={text => setItemInput(text)} value={itemInput} />
 
       <Button style={styles.addButton} title="Agregar Item" onPress={() => {
-        if (itemInput) {
+        if (itemInput !== "") {
           list.push(itemInput);
           setItemInput(""); 
         }
