@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Finder({ texto = [] }) {
+export default function Finder({ items = [] }) {
   return (
     <View style={styles.container}>
         <View style={styles.box}>
-            {texto.map((item, index) => (
+            {items.map((item, index) => (
               <Text key={index} style={styles.item}>• {item}</Text>
             ))}
+            
         </View>
     </View>
   );
