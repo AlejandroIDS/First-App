@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, TouchableOpacity } from 'react-native';
+import { SymbolView, SymbolViewProps, SFSymbol } from 'expo-symbols';
+import Finder from './components/finder';
 
 export default function App() {
   // Javascript
-  var texto = "Variable de texto xdd";
-
+  let list = ["Leche", "Pan", "Huevos", "Cereal"];
 
   // JSX (HTML like)
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>¡Mi primera app con React Native!!!!</Text>
-      <Button style={styles.text}
-        title="Botón"
-        onPress={() => Alert.alert('Presionaste el botón wao')}
-      />
+      <Text style={styles.title}>Lista de compras</Text>
+
+      <Finder texto={list} />
     </View>
 
   );
@@ -29,8 +28,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    color: 'blue',
-    fontSize: 20,
+    color: 'darkblue',
+    fontSize: 25,
+    fontWeight: 'bold',
   },
   text: {
     color: 'red',
